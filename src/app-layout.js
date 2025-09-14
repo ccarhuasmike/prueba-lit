@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import './components/comp1.js';
 import './components/comp2.js';
-
+import "./side-menu.js";
 export class AppLayout extends LitElement {
     static styles = css`
     .container {
@@ -14,21 +14,48 @@ export class AppLayout extends LitElement {
     }
     render() {
         return html`
-      <div class="container">
-        <h1 class="text-center text-primary">Layout Principal con Lit + Bootstrap</h1>
-        <div class="row">
-          <div class="col-md-4"><comp-1></comp-1></div>
-          <div class="col-md-4"><comp-2></comp-2></div>          
-        </div>
-        <div class="row mt-3">
-          
-        </div>
-        <div class="row mt-3">
-          
+       <div id="wrapper">
+        <!-- Sidebar -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+          <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">             
+              <li class="active">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Gráficas</span></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tablas</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Page wrapper -->
+        <div id="page-wrapper" class="gray-bg">
+          <!-- Top navbar -->
+          <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation">
+              <div class="navbar-header">
+                <a class="navbar-minimalize btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+              </div>
+              <ul class="nav navbar-top-links navbar-right">
+                <li><a href="#"><i class="fa fa-sign-out"></i> Salir</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Main content -->
+          <div class="wrapper wrapper-content">
+            <dashboard-container></dashboard-container>
+          </div>
+          <!-- Footer -->
+          <div class="footer">
+            <div class="pull-right">Versión <strong>1.0</strong></div>
+            <div><strong>Copyright</strong> Mi App © 2025</div>
+          </div>
         </div>
       </div>
     `;
     }
 }
-
 customElements.define('app-layout', AppLayout);
