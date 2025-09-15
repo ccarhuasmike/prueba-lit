@@ -10,7 +10,7 @@ export class DashboardContainer extends LitElement {
     super();
     this.widgets = [
       { id: 1, type: 'weather-widget', config: { city: 'Lima' } },
-      { id: 2, type: 'news-widget', config: { source: 'BBC' } },
+      { id: 2, type: 'noticie-widget', config: { source: 'BBC' } },
       { id: 3, type: 'chart-widget', config: { title: 'Ventas 2025' } }
     ];
   }

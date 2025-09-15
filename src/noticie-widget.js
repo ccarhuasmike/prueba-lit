@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 
-export class NewsWidget extends LitElement {
+export class NoticieWidget extends LitElement {
   static properties = {
     source: { type: String }
   };
@@ -24,4 +24,4 @@ export class NewsWidget extends LitElement {
     `;
   }
 }
-customElements.define('news-widget', NewsWidget);
+customElements.define('noticie-widget', NoticieWidget);

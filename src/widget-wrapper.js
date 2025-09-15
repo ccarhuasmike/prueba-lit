@@ -25,7 +25,7 @@ export class WidgetWrapper extends LitElement {
         <div class="card-header d-flex justify-content-between align-items-center">
           <span class="fw-bold">
             ${this.type === 'weather-widget' ? '🌤 Clima' :
-              this.type === 'news-widget' ? '📰 Noticias' :
+              this.type === 'noticie-widget' ? '📰 Noticias' :
               this.type === 'chart-widget' ? '📊 Gráfico' : 'Widget'}
           </span>
           <button class="btn-close" aria-label="Cerrar" @click=${this.closeWidget}>
@@ -35,8 +35,8 @@ export class WidgetWrapper extends LitElement {
         <div class="card-body">
           ${this.type === 'weather-widget'
             ? html`<weather-widget .city=${this.config.city}></weather-widget>`
-            : this.type === 'news-widget'
-            ? html`<news-widget .source=${this.config.source}></news-widget>`
+            : this.type === 'noticie-widget'
+            ? html`<noticie-widget .source=${this.config.source}></noticie-widget>`
             : this.type === 'chart-widget'
             ? html`<chart-widget .title=${this.config.title}></chart-widget>`
             : html`<div>Widget desconocido</div>`

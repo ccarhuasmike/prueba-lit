@@ -1,6 +1,4 @@
 import { LitElement, html, css } from 'lit';
-import './components/comp1.js';
-import './components/comp2.js';
 import "./side-menu.js";
 export class AppLayout extends LitElement {
     static styles = css`
